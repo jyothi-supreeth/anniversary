@@ -1,0 +1,598 @@
+:host {
+  --ink: #442d3a;
+  --muted: #8c737d;
+  --wine: #8e3f5b;
+  --rose: #cf7890;
+  --gold: #c69b58;
+  --paper: #fffaf5;
+
+  display: block;
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 79% 23%, rgb(246 218 212 / 42%), transparent 29rem),
+    radial-gradient(ellipse at 17% 74%, rgb(248 231 214 / 46%), transparent 30rem),
+    var(--paper);
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+.anniversary-page {
+  position: relative;
+  width: min(100% - 64px, 1180px);
+  margin-inline: auto;
+}
+
+.page-glow {
+  position: absolute;
+  z-index: 0;
+  width: 18rem;
+  height: 18rem;
+  border: 1px solid rgb(198 155 88 / 13%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.page-glow::before,
+.page-glow::after {
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgb(198 155 88 / 10%);
+  border-radius: inherit;
+  content: "";
+}
+
+.page-glow::after {
+  inset: 38px;
+}
+
+.page-glow-top {
+  top: 16rem;
+  right: -9rem;
+}
+
+.page-glow-bottom {
+  bottom: 17rem;
+  left: -12rem;
+  width: 24rem;
+  height: 24rem;
+}
+
+.topbar,
+.hero,
+.countdown-section,
+.love-note-section,
+.page-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.topbar {
+  display: flex;
+  min-height: 86px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(68 45 58 / 10%);
+}
+
+.wordmark,
+.topbar-link {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-style: italic;
+}
+
+.wordmark-heart {
+  color: var(--wine);
+  font-size: 20px;
+  font-style: normal;
+}
+
+.topbar-link {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.topbar-link span {
+  margin-left: 5px;
+  color: var(--wine);
+}
+
+.hero {
+  display: grid;
+  min-height: 575px;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: 30px;
+  padding-block: 62px 76px;
+}
+
+.hero-copy {
+  max-width: 560px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--wine);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  line-height: 1.7;
+}
+
+.hero-copy > .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eyebrow-line {
+  width: 22px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.anniversary-label {
+  margin: 25px 0 11px;
+  color: var(--muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-style: italic;
+}
+
+h1,
+h2,
+p {
+  overflow-wrap: break-word;
+}
+
+h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(56px, 7.6vw, 94px);
+  font-weight: 400;
+  letter-spacing: -0.07em;
+  line-height: 0.99;
+}
+
+h1 span,
+h2 span {
+  color: var(--wine);
+  font-style: italic;
+}
+
+.hero-description {
+  max-width: 410px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.primary-link {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  gap: 18px;
+  margin-top: 28px;
+  padding: 0 19px;
+  border: 1px solid rgb(142 63 91 / 35%);
+  border-radius: 2px;
+  color: var(--wine);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.primary-link:hover {
+  transform: translateY(-2px);
+  color: white;
+  background: var(--wine);
+}
+
+.hero-art {
+  position: relative;
+  display: grid;
+  min-height: 400px;
+  place-items: center;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px solid rgb(198 155 88 / 35%);
+  border-radius: 50%;
+  transform: rotate(-24deg);
+}
+
+.orbit-one {
+  width: 335px;
+  height: 215px;
+}
+
+.orbit-two {
+  width: 388px;
+  height: 266px;
+  transform: rotate(38deg);
+}
+
+.orbit-three {
+  width: 292px;
+  height: 350px;
+  border-color: rgb(207 120 144 / 24%);
+  transform: rotate(55deg);
+}
+
+.heart-card {
+  position: relative;
+  display: flex;
+  width: 208px;
+  height: 232px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(142 63 91 / 12%);
+  border-radius: 48% 48% 45% 45% / 43% 43% 56% 56%;
+  background: linear-gradient(150deg, #fffdfb 5%, #f9e9e3 100%);
+  box-shadow:
+    0 26px 65px rgb(102 57 74 / 12%),
+    inset 0 0 0 8px rgb(255 255 255 / 62%);
+  transform: rotate(-4deg);
+}
+
+.hero-heart {
+  width: 84px;
+  overflow: visible;
+  fill: #b65b76;
+  filter: drop-shadow(0 10px 12px rgb(142 63 91 / 24%));
+}
+
+.heart-card p {
+  margin: 9px 0 2px;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.heart-date {
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.heart-sparkle {
+  position: absolute;
+  color: var(--gold);
+}
+
+.sparkle-one {
+  top: 33px;
+  left: 36px;
+  font-size: 18px;
+}
+
+.sparkle-two {
+  right: 33px;
+  bottom: 48px;
+  font-size: 20px;
+}
+
+.orbit-note {
+  position: absolute;
+  padding: 7px 12px;
+  border: 1px solid rgb(198 155 88 / 34%);
+  border-radius: 30px;
+  background: var(--paper);
+  color: var(--muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.note-one {
+  top: 72px;
+  right: 20px;
+  transform: rotate(7deg);
+}
+
+.note-two {
+  bottom: 69px;
+  left: 5px;
+  transform: rotate(-9deg);
+}
+
+.countdown-section {
+  display: flex;
+  min-height: 248px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgb(68 45 58 / 10%);
+  border-bottom: 1px solid rgb(68 45 58 / 10%);
+  text-align: center;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 9px;
+}
+
+h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(29px, 4vw, 42px);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 5vw, 52px);
+  margin-top: 23px;
+}
+
+.countdown-unit {
+  display: flex;
+  min-width: 54px;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.countdown-number {
+  color: var(--wine);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 31px;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-label {
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.countdown-divider {
+  align-self: flex-start;
+  margin-top: 4px;
+  color: var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+}
+
+.countdown-footnote,
+.anniversary-today {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.anniversary-today span {
+  color: var(--wine);
+}
+
+.love-note-section {
+  display: flex;
+  min-height: 450px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-block: 80px;
+  text-align: center;
+}
+
+.note-decoration {
+  margin-bottom: 8px;
+  color: rgb(142 63 91 / 40%);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+}
+
+.love-note-section .eyebrow {
+  margin-bottom: 11px;
+}
+
+.love-note-section h2 {
+  font-size: clamp(38px, 6vw, 60px);
+  line-height: 1.05;
+}
+
+.letter-button {
+  display: inline-flex;
+  min-height: 49px;
+  align-items: center;
+  gap: 18px;
+  margin-top: 25px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 2px;
+  background: var(--wine);
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.letter-button:hover {
+  transform: translateY(-2px);
+  background: #713149;
+}
+
+.letter-button span {
+  font-size: 16px;
+}
+
+.letter {
+  width: min(100%, 560px);
+  margin-top: 30px;
+  padding: 30px clamp(22px, 6vw, 52px);
+  border: 1px solid rgb(198 155 88 / 30%);
+  background: rgb(255 255 255 / 55%);
+  box-shadow: 0 14px 40px rgb(102 57 74 / 7%);
+  color: var(--muted);
+  text-align: left;
+  animation: letter-open 300ms ease both;
+}
+
+.letter p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.letter .letter-salutation {
+  color: var(--ink);
+  font-size: 18px;
+  font-style: italic;
+}
+
+.letter .letter-signoff {
+  margin-top: 22px;
+  color: var(--ink);
+}
+
+.letter-signoff span {
+  display: block;
+  margin-top: 5px;
+  color: var(--wine);
+  font-size: 18px;
+  font-style: italic;
+}
+
+.page-footer {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border-top: 1px solid rgb(68 45 58 / 10%);
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.page-footer span:nth-child(2) {
+  color: var(--wine);
+  font-size: 13px;
+}
+
+@keyframes letter-open {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 760px) {
+  .anniversary-page {
+    width: min(100% - 40px, 560px);
+  }
+
+  .topbar {
+    min-height: 70px;
+  }
+
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding-block: 55px 45px;
+  }
+
+  .hero-copy {
+    text-align: center;
+  }
+
+  .hero-copy > .eyebrow {
+    justify-content: center;
+  }
+
+  .anniversary-label {
+    margin-top: 20px;
+  }
+
+  h1 {
+    font-size: clamp(58px, 15vw, 86px);
+  }
+
+  .hero-description {
+    margin-inline: auto;
+  }
+
+  .hero-art {
+    min-height: 350px;
+    margin-top: 5px;
+    transform: scale(0.9);
+  }
+
+  .countdown-section {
+    min-height: 225px;
+    padding-inline: 8px;
+  }
+
+  .love-note-section {
+    min-height: 400px;
+    padding-block: 65px;
+  }
+}
+
+@media (max-width: 390px) {
+  .anniversary-page {
+    width: calc(100% - 32px);
+  }
+
+  .topbar-link {
+    font-size: 10px;
+  }
+
+  .hero-art {
+    margin-inline: -20px;
+    transform: scale(0.78);
+  }
+
+  .countdown {
+    gap: 16px;
+  }
+
+  .countdown-number {
+    font-size: 27px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

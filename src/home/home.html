@@ -1,1 +1,116 @@
-<p>home works!</p>
+<main class="anniversary-page">
+  <div class="page-glow page-glow-top" aria-hidden="true"></div>
+  <div class="page-glow page-glow-bottom" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="wordmark" href="#home" aria-label="Our anniversary, home">
+      <span class="wordmark-heart" aria-hidden="true">♥</span>
+      <span>our little forever</span>
+    </a>
+    <a class="topbar-link" href="#love-note">a note for you <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <section class="hero" id="home" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="eyebrow-line"></span> JANUARY 16, 2027 <span class="eyebrow-line"></span></p>
+      <p class="anniversary-label">our fourth wedding anniversary</p>
+      <h1 id="hero-title">Four years.<br />Still <span>my favourite</span><br />yes.</h1>
+      <p class="hero-description">
+        Four years ago, I got to call you my husband. Every day since has been
+        another reason I’d choose you all over again.
+      </p>
+      <a class="primary-link" href="#countdown">
+        A little countdown <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+
+    <div class="hero-art" aria-label="A heart surrounded by a hand-drawn golden ring">
+      <div class="orbit orbit-one"></div>
+      <div class="orbit orbit-two"></div>
+      <div class="orbit orbit-three"></div>
+      <div class="heart-card">
+        <span class="heart-sparkle sparkle-one" aria-hidden="true">✦</span>
+        <span class="heart-sparkle sparkle-two" aria-hidden="true">✧</span>
+        <svg class="hero-heart" viewBox="0 0 160 150" role="img" aria-label="A heart">
+          <path d="M80 137S12 97 12 48C12 8 63-4 80 34 97-4 148 8 148 48c0 49-68 89-68 89Z" />
+        </svg>
+        <p>you &amp; me</p>
+        <span class="heart-date">since 2023</span>
+      </div>
+      <span class="orbit-note note-one">my person</span>
+      <span class="orbit-note note-two">always</span>
+    </div>
+  </section>
+
+  <section class="countdown-section" id="countdown" aria-labelledby="countdown-title">
+    <div class="section-heading">
+      <p class="eyebrow">THE BIG DAY IS GETTING CLOSER</p>
+      <h2 id="countdown-title">
+        @if (countdown().hasArrived) {
+          Happy anniversary, my love.
+        } @else {
+          Counting down to <span>us.</span>
+        }
+      </h2>
+    </div>
+    @if (!countdown().hasArrived) {
+      <div class="countdown" aria-label="Time remaining until January 16, 2027">
+        <div class="countdown-unit">
+          <span class="countdown-number">{{ countdown().days }}</span>
+          <span class="countdown-label">days</span>
+        </div>
+        <span class="countdown-divider" aria-hidden="true">·</span>
+        <div class="countdown-unit">
+          <span class="countdown-number">{{ countdown().hours }}</span>
+          <span class="countdown-label">hours</span>
+        </div>
+        <span class="countdown-divider" aria-hidden="true">·</span>
+        <div class="countdown-unit">
+          <span class="countdown-number">{{ countdown().minutes }}</span>
+          <span class="countdown-label">minutes</span>
+        </div>
+      </div>
+    } @else {
+      <p class="anniversary-today">Four years down. All my tomorrows to go. <span aria-hidden="true">♥</span></p>
+    }
+    <p class="countdown-footnote">Until January 16, 2027 — and every lovely day after.</p>
+  </section>
+
+  <section class="love-note-section" id="love-note" aria-labelledby="note-title">
+    <div class="note-decoration" aria-hidden="true">♡</div>
+    <p class="eyebrow">SOMETHING I WANT YOU TO KNOW</p>
+    <h2 id="note-title">A little note<br />for my <span>favourite human.</span></h2>
+    <button
+      class="letter-button"
+      type="button"
+      [attr.aria-expanded]="isLetterOpen()"
+      aria-controls="love-letter"
+      (click)="toggleLetter()"
+    >
+      {{ isLetterOpen() ? 'Close your letter' : 'Open your letter' }}
+      <span aria-hidden="true">{{ isLetterOpen() ? '↑' : '♡' }}</span>
+    </button>
+    @if (isLetterOpen()) {
+      <article class="letter" id="love-letter">
+        <p class="letter-salutation">To my darling husband,</p>
+        <p>
+          Happy fourth anniversary to the person who makes ordinary days feel
+          like my favourite place to be. Thank you for the laughter, the little
+          moments, the steady love, and for being wonderfully, perfectly you.
+        </p>
+        <p>
+          Four years of being your wife, and my heart is still finding new ways
+          to love you. Whatever the next chapter brings, I want to read it
+          beside you, hand in hand.
+        </p>
+        <p class="letter-signoff">I choose you. Always yours, <span>your wife ♡</span></p>
+      </article>
+    }
+  </section>
+
+  <footer class="page-footer">
+    <span>made with all my love</span>
+    <span aria-hidden="true">♥</span>
+    <span>january 16, 2027</span>
+  </footer>
+</main>

@@ -14,10 +14,10 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render the home component', async () => {
+  it('should render the anniversary page', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('app-home p')?.textContent).toContain('home works!');
+    expect(compiled.querySelector('.hero h1')?.textContent).toContain('my favourite');
   });
 });
