@@ -19,8 +19,8 @@
         Four years ago, I got to call you my husband. Every day since has been
         another reason I’d choose you all over again.
       </p>
-      <a class="primary-link" href="#countdown">
-        A little countdown <span aria-hidden="true">↓</span>
+      <a class="primary-link" href="#celebration">
+        Our story so far <span aria-hidden="true">↓</span>
       </a>
     </div>
 
@@ -34,7 +34,7 @@
         <svg class="hero-heart" viewBox="0 0 160 150" role="img" aria-label="A heart">
           <path d="M80 137S12 97 12 48C12 8 63-4 80 34 97-4 148 8 148 48c0 49-68 89-68 89Z" />
         </svg>
-        <p>you &amp; me</p>
+        <p>Jyothi &amp; Supreeth</p>
         <span class="heart-date">since 2023</span>
       </div>
       <span class="orbit-note note-one">my person</span>
@@ -42,38 +42,20 @@
     </div>
   </section>
 
-  <section class="countdown-section" id="countdown" aria-labelledby="countdown-title">
+  <section class="celebration-section" id="celebration" aria-labelledby="celebration-title">
     <div class="section-heading">
-      <p class="eyebrow">THE BIG DAY IS GETTING CLOSER</p>
-      <h2 id="countdown-title">
-        @if (countdown().hasArrived) {
-          Happy anniversary, my love.
-        } @else {
-          Counting down to <span>us.</span>
-        }
-      </h2>
+      <p class="eyebrow">A MILESTONE WORTH CELEBRATING</p>
+      <h2 id="celebration-title">Four years of choosing <span>each other.</span></h2>
+      <p class="celebration-copy">
+        Happy fourth wedding anniversary. Four years married, one favourite person,
+        and a lifetime of little moments still to come.
+      </p>
     </div>
-    @if (!countdown().hasArrived) {
-      <div class="countdown" aria-label="Time remaining until January 16, 2027">
-        <div class="countdown-unit">
-          <span class="countdown-number">{{ countdown().days }}</span>
-          <span class="countdown-label">days</span>
-        </div>
-        <span class="countdown-divider" aria-hidden="true">·</span>
-        <div class="countdown-unit">
-          <span class="countdown-number">{{ countdown().hours }}</span>
-          <span class="countdown-label">hours</span>
-        </div>
-        <span class="countdown-divider" aria-hidden="true">·</span>
-        <div class="countdown-unit">
-          <span class="countdown-number">{{ countdown().minutes }}</span>
-          <span class="countdown-label">minutes</span>
-        </div>
-      </div>
-    } @else {
-      <p class="anniversary-today">Four years down. All my tomorrows to go. <span aria-hidden="true">♥</span></p>
-    }
-    <p class="countdown-footnote">Until January 16, 2027 — and every lovely day after.</p>
+    <div class="anniversary-mark" aria-label="Four years married, January 16, 2027">
+      <span class="anniversary-number">04</span>
+      <span class="anniversary-years">years married</span>
+      <span class="anniversary-date"><span aria-hidden="true">♥</span> 16 · 01 · 2027 <span aria-hidden="true">♥</span></span>
+    </div>
   </section>
 
   <section class="love-note-section" id="love-note" aria-labelledby="note-title">
@@ -92,7 +74,7 @@
     </button>
     @if (isLetterOpen()) {
       <article class="letter" id="love-letter">
-        <p class="letter-salutation">To my darling husband,</p>
+        <p class="letter-salutation">To my darling Supreeth,</p>
         <p>
           Happy fourth anniversary to the person who makes ordinary days feel
           like my favourite place to be. Thank you for the laughter, the little
@@ -103,7 +85,7 @@
           to love you. Whatever the next chapter brings, I want to read it
           beside you, hand in hand.
         </p>
-        <p class="letter-signoff">I choose you. Always yours, <span>your wife ♡</span></p>
+        <p class="letter-signoff">I choose you. Always yours, <span>Jyothi ♡</span></p>
       </article>
     }
   </section>

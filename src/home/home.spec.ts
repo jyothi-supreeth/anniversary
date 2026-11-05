@@ -19,6 +19,14 @@ describe('Home', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should show the anniversary celebration instead of a countdown', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    expect(compiled.querySelector('#celebration-title')?.textContent).toContain('Four years of choosing');
+    expect(compiled.querySelector('.anniversary-number')?.textContent).toBe('04');
+    expect(compiled.querySelector('.countdown')).toBeNull();
+  });
+
   it('should reveal and close the anniversary letter', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     const button = compiled.querySelector('.letter-button') as HTMLButtonElement;
@@ -28,6 +36,8 @@ describe('Home', () => {
 
     expect(compiled.querySelector('#love-letter')).toBeTruthy();
     expect(button.getAttribute('aria-expanded')).toBe('true');
+    expect(compiled.querySelector('.letter-salutation')?.textContent).toContain('Supreeth');
+    expect(compiled.querySelector('.letter-signoff')?.textContent).toContain('Jyothi');
 
     button.click();
     fixture.detectChanges();
