@@ -27,6 +27,24 @@ describe('Home', () => {
     expect(compiled.querySelector('.countdown')).toBeNull();
   });
 
+  it('should celebrate all eight places travelled together from India', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    const destinations = Array.from(compiled.querySelectorAll('.travel-stamp strong'))
+      .map((destination) => destination.textContent?.trim());
+
+    expect(compiled.querySelector('.travel-copy')?.textContent).toContain('India');
+    expect(destinations).toEqual([
+      'Maldives',
+      'Switzerland',
+      'Germany',
+      'Belgium',
+      'France',
+      'Thailand',
+      'Singapore',
+      'Taiwan',
+    ]);
+  });
+
   it('should reveal and close the anniversary letter', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     const button = compiled.querySelector('.letter-button') as HTMLButtonElement;

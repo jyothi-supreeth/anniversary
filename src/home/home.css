@@ -402,6 +402,88 @@ h2 {
   font-style: italic;
 }
 
+.travel-section {
+  padding: 82px clamp(4px, 5vw, 56px) 76px;
+  border-bottom: 1px solid rgb(68 45 58 / 10%);
+  text-align: center;
+}
+
+.travel-heading .eyebrow {
+  margin-bottom: 10px;
+}
+
+.travel-heading h2 {
+  font-size: clamp(42px, 6vw, 62px);
+  line-height: 1.03;
+}
+
+.travel-heading h2 span {
+  display: inline-block;
+  margin-top: 3px;
+}
+
+.travel-copy {
+  max-width: 550px;
+  margin: 16px auto 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.travel-stamps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.travel-stamp {
+  position: relative;
+  display: flex;
+  min-height: 112px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow: hidden;
+  border: 1px solid rgb(198 155 88 / 35%);
+  background: rgb(255 255 255 / 45%);
+}
+
+.travel-stamp::before {
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed rgb(142 63 91 / 22%);
+  content: "";
+  pointer-events: none;
+}
+
+.travel-stamp span {
+  color: var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+}
+
+.travel-stamp strong {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(14px, 1.7vw, 19px);
+  font-weight: 400;
+}
+
+.travel-signoff {
+  margin: 27px 0 0;
+  color: var(--muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.travel-signoff span {
+  color: var(--wine);
+}
+
 .love-note-section {
   display: flex;
   min-height: 450px;
@@ -576,6 +658,20 @@ h2 {
 
   .celebration-copy {
     margin-inline: auto;
+  }
+
+  .travel-section {
+    padding-block: 64px;
+  }
+
+  .travel-stamps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .travel-stamp {
+    min-height: 100px;
   }
 
   .love-note-section {
